@@ -1,12 +1,17 @@
 import { plantList } from '../datas/plantList'
+import '../styles/ShoppingList.css'
+
 
 
 function ShoppingList(){
+	// reduce() browse through an array, apply a function on this iteration of "plant" and register the results in accumulator to be used again in the next iteration.
     const categories = plantList.reduce(
 		(accumulator, plant) =>
 			accumulator.includes(plant.category) ? accumulator : accumulator.concat(plant.category),
 		[]
+		//includes() check if an array contain a certain data.
 	)
+	//map()apply a function to each element of an array and return an array with the transformed datas.
     return (
         <div>
 			<ul>
@@ -14,9 +19,11 @@ function ShoppingList(){
 					<li key={cat}>{cat}</li>
 				))}
 			</ul>
-			<ul>
+			<ul className='fs-plant-list'>
 				{plantList.map((plant) => (
-					<li key={plant.id}>{plant.name}</li>
+					<li key={plant.id} className='fs-plant-item'>{plant.name}
+						{plant.isSpecialOffer && <div className='fs-sales'> Soldes ! *^_^* </div>}
+					</li>
 				))}
 			</ul>
 		</div>
