@@ -1,0 +1,14 @@
+.fs-plant-item-cover {
+	height: 220px;
+	width: 220px;
+	border-radius: 20px;
+}
+
+.fs-plant-item {
+	margin: 10px;
+	display: flex;
+	align-items: flex-start;
+	justify-content: center;
+	flex-direction: column;
+	text-transform: capitalize;
+}
